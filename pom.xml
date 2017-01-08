@@ -12,8 +12,9 @@
 	<description>Spring Boot Sandbox</description>
 
 	<modules>
-		<module>hello-spring-boot</module>
+		<module>application-properties</module>
 		<module>beans</module>
+		<module>hello-spring-boot</module>
 	</modules>
 
 	<parent>

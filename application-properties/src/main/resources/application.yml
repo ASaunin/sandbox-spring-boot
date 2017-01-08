@@ -1,0 +1,13 @@
+pageController:
+  message: Hello from YAML config #the same key from application.properties file has higher priority
+
+randomValue:
+  secret: ${random.value}
+  number: ${random.int}
+  numberLessThan10: ${random.int(10)}
+  numberInRange: ${random.int(10,20)}
+  bigNumber: ${random.long}
+
+app:
+  name: Here comes my ...
+  description: ${app.name} Spring boot appplication
