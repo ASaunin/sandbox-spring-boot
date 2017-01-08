@@ -3,7 +3,7 @@ package com.config;
 import com.model.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 @ComponentScan({"com"})
 @SpringBootApplication //equals to @Configuration, @EnableAutoConfiguration, @ComponentScan
-public class ConfigApplication {
+public class Application {
 
     @Bean("person") //Specifies specific bean name
     public Person fooPerson() {
@@ -23,7 +23,7 @@ public class ConfigApplication {
     }
 
     public static void main(String[] args) {
-        final ConfigurableApplicationContext context = SpringApplication.run(ConfigApplication.class);
+        final ApplicationContext context = SpringApplication.run(Application.class);
         final String[] beanNames = context.getBeanDefinitionNames();
 
         // Displays all the beans from component scan
