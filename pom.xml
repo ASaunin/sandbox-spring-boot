@@ -11,6 +11,10 @@
 	<name>sandbox-spring-boot</name>
 	<description>Spring Boot Sandbox</description>
 
+	<modules>
+		<module>hello-spring-boot</module>
+	</modules>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
