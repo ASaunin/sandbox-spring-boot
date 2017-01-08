@@ -1,0 +1,6 @@
+config:
+  app-name: Here comes ...
+  app-description: ${config.app-name} a Spring Boot Application
+  admin-first-name: Alex
+  admin-last-name: Saunin
+  adminEmail: alsaunin@gmail.com #Both camel case & dash separator are appropriate
