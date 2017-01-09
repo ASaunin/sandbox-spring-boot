@@ -1,0 +1,7 @@
+db:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/Test
+  username: test
+  password: test
+
+message: Hello from development environement

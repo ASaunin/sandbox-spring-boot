@@ -1,0 +1,7 @@
+db:
+  driver: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1571:Prod
+  username: admin
+  password: admin
+
+message: Hello from production environement
