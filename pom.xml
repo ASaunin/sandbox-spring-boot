@@ -15,8 +15,9 @@
 		<module>application-properties</module>
 		<module>beans</module>
 		<module>configuration-properties</module>
-		<module>profiles</module>
 		<module>hello-spring-boot</module>
+		<module>profiles</module>
+		<module>static-content</module>
 	</modules>
 
 	<parent>
