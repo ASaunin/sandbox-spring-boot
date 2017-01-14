@@ -16,6 +16,7 @@
 		<module>beans</module>
 		<module>configuration-properties</module>
 		<module>hello-spring-boot</module>
+		<module>internationalisation</module>
 		<module>profiles</module>
 		<module>static-content</module>
 	</modules>
