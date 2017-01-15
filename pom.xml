@@ -17,6 +17,7 @@
 		<module>configuration-properties</module>
 		<module>hello-spring-boot</module>
 		<module>internationalisation</module>
+		<module>jdbc</module>
 		<module>jpa</module>
 		<module>profiles</module>
 		<module>static-content</module>
