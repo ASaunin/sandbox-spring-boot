@@ -16,10 +16,10 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/persons")
     public String viewPersons(Model model) {
-        model.addAttribute("persons", personService.list());
-        return "persons/list";
+        model.addAttribute("persons", personService.findAll());
+        return "person/list";
     }
 
 }

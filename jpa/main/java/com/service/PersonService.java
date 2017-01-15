@@ -17,8 +17,11 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public List<Person> list() {
+    public List<Person> findAll() {
         return (List<Person>) personRepository.findAll();
     }
 
+    public Person findByNickName(String nickName) {
+        return personRepository.findByNickName(nickName);
+    }
 }

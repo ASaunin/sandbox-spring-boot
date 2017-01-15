@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout/index">
+<body>
+
+<div layout:fragment="content">
+
+    <div class="col-sm-8 blog-main">
+
+        <article class="blog-post" th:each="post : ${posts}">
+            <header>
+                <h2 class="blog-post-title" th:text="${post.title}">Another blog post</h2>
+            </header>
+            <p class="blog-post-meta">Posted <span
+                    th:text="${#calendars.format(post.postedOn,'M/dd/yyyy hh:mm a')}">December 23, 2013</span> by <a
+                    th:text="${post.author.fullName}" th:href="|@{/posts/list/}${post.author.nickName}|">Jacob</a></p>
+            <section th:utext="${post.description}">
+                Lorem ipsum dolor sit amet...
+            </section>
+            <footer>
+                <a th:href="|@{/posts/view/}${post.id}|">Read More</a>
+            </footer>
+            <hr/>
+        </article><!-- /.blog-post -->
+
+    </div><!-- /.blog-main -->
+
+</div><!-- /.container -->
+
+</body>
+</html>
