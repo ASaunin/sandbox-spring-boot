@@ -8,6 +8,8 @@ import java.util.Collection;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
 
+    Post findById(Long id);
+
     Collection<Post> findByAuthorOrderByPostedOnDesc(Person author);
 
     Collection<Post> findAllByOrderByPostedOnDesc();

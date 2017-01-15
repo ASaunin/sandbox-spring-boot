@@ -23,7 +23,7 @@ public class PostService {
     }
 
     public Post findById(Long id) {
-        return postRepository.findOne(id);
+        return postRepository.findById(id);
     }
 
     public Collection<Post> findAll() {

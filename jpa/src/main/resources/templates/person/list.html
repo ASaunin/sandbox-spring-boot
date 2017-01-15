@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout/index">
+<body>
+
+<div layout:fragment="content">
+
+    <h1>List of persons</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${persons}">
+            <td><a th:text="${person.fullName}" href="#" th:href="|@{/posts/list/}${person.nickName}|">John Doe</a></td>
+            <td th:text="${person.email}">john@example.com</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

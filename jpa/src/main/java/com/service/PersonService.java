@@ -5,7 +5,7 @@ import com.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Collection;
 
 @Service
 public class PersonService {
@@ -17,8 +17,8 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
-    public List<Person> findAll() {
-        return (List<Person>) personRepository.findAll();
+    public Collection<Person> findAll() {
+        return (Collection<Person>) personRepository.findAll();
     }
 
     public Person findByNickName(String nickName) {
