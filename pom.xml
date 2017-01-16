@@ -15,6 +15,7 @@
 		<module>core/application-properties</module>
 		<module>core/beans</module>
 		<module>core/configuration-properties</module>
+		<module>core/hello-spring</module>
 		<module>core/hello-spring-boot</module>
 		<module>web/internationalisation</module>
 		<module>data/jdbc</module>
@@ -35,6 +36,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
