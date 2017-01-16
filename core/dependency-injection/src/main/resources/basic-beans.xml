@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:annotation-config/>-->
+    <!--<context:component-scan base-package="xmlbeans"/>-->
+
+    <!--Constructor arguments-->
+    <bean id="phone" class="xml.basic.beans.Contact">
+        <constructor-arg index="0" value="PHONE"/>
+        <constructor-arg index="1" value="+792198765432"/>
+    </bean>
+
+    <!--Constructor arguments (short form)-->
+    <bean id="address" class="xml.basic.beans.Contact" c:type="ADDRESS" c:value="123 Main St., Anytown, USA"/>
+
+    <!--Define contact list-->
+    <bean id="contacts" class="java.util.ArrayList" scope="prototype">
+        <constructor-arg>
+            <list>
+                <ref bean="phone"/>
+                <ref bean="address"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!--Define singleton bean-->
+    <bean id="person" class="xml.basic.beans.Person" p:taxId="123">
+        <constructor-arg name="firstName" value="John"/>
+        <constructor-arg name="lastName" value="Doe"/>
+        <constructor-arg name="age" value="33"/>
+        <property name="contacts" ref="contacts"/> <!-- Via setter properties -->
+    </bean>
+
+    <!--Define prototype bean-->
+    <bean id="prototypePerson" class="xml.basic.beans.Person" scope="prototype" c:firstName="John" c:lastName="Doe" c:age="33" p:taxId="123" p:contacts-ref="contacts"/>
+
+    <!--Factory-method instantiation -->
+    <bean id="personFactory" class="xml.basic.beans.PersonFactory" />
+    <bean id="factoredPerson" factory-bean="personFactory" factory-method="createPerson" c:firstName="John" c:lastName="Doe" c:age="33"/>
+
+</beans>

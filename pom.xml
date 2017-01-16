@@ -15,6 +15,7 @@
 		<module>core/application-properties</module>
 		<module>core/beans</module>
 		<module>core/configuration-properties</module>
+		<module>core/dependency-injection</module>
 		<module>core/hello-spring</module>
 		<module>core/hello-spring-boot</module>
 		<module>web/internationalisation</module>
