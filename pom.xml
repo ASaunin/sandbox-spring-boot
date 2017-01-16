@@ -12,15 +12,15 @@
 	<description>Spring Boot Sandbox</description>
 
 	<modules>
-		<module>application-properties</module>
-		<module>beans</module>
-		<module>configuration-properties</module>
-		<module>hello-spring-boot</module>
-		<module>internationalisation</module>
-		<module>jdbc</module>
-		<module>jpa</module>
-		<module>profiles</module>
-		<module>static-content</module>
+		<module>core/application-properties</module>
+		<module>core/beans</module>
+		<module>core/configuration-properties</module>
+		<module>core/hello-spring-boot</module>
+		<module>web/internationalisation</module>
+		<module>data/jdbc</module>
+		<module>data/jpa</module>
+		<module>core/profiles</module>
+		<module>web/static-content</module>
 	</modules>
 
 	<parent>

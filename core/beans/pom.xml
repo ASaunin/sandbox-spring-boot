@@ -8,9 +8,11 @@
         <groupId>ru.asaunin</groupId>
         <artifactId>sandbox-spring-boot</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>hello-spring-boot</artifactId>
+    <name>beans</name>
+    <artifactId>beans</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
