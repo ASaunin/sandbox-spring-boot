@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout/index">
+<body>
+
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Sign in</strong>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" th:action="@{/login}" method="post" autocomplete="off" class="form-signin">
+                            <div class="col-sm-12 col-md-10 col-md-offset-1 ">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input class="form-control" id="email" name="email" placeholder="email"
+                                               type="text"
+                                               required="true" autocomplete="off" maxlength="255"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input class="form-control" id="password" name="password" placeholder="password"
+                                               type="password" autocomplete="off" required="true"
+                                               maxlength="255"/>
+                                    </div>
+                                </div>
+                                <div th:if="${param.error}" class="alert alert-danger">
+                                    Invalid username and password.
+                                </div>
+                                <div th:if="${param.logout}" class="alert alert-success">
+                                    You have been logged out.
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="remember-me" name="remember-me" type="checkbox" /> Remember me
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-block"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div class="panel-footer">-->
+                    <!--${dont_have_acc} <a href="registration.jsp" onClick=""> ${sign_up_here} </a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

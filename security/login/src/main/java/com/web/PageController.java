@@ -1,6 +1,5 @@
-package com.controller;
+package com.web;
 
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,14 +12,12 @@ public class PageController {
         return "This page should be available for everyone... But it doesn't work for somehow!";
     }
 
-    @RequestMapping({"/","/user"})
-    @Secured({"ROLE_USER", "ROLE_ADMIN"})
+    @RequestMapping("/user")
     public String user() {
         return "This page is available only for authorised users";
     }
 
     @RequestMapping("/admin")
-    @Secured("ROLE_ADMIN")
     public String admin() {
         return "This page is available only for admins";
     }

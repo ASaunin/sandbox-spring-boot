@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns:layout="http://www.w3.org/1999/xhtml"
+	  layout:decorator="layout/index">
+<head>
+	<title>Login example</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+	<h3>Welcome home</h3>
+	<ul>
+		<li><strong>/guest</strong> - available for everyone</li>
+		<li><strong>/user</strong> - grant access for admin/user roles</li>
+		<li><strong>/admin/...</strong> - is guaranteed for admin role</li>
+	</ul>
+	<br/>
+	And be sure to try <strong>/logout</strong> for the new challenges
+</div>
+
+</body>
+</html>

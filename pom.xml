@@ -21,6 +21,7 @@
 		<module>core/profiles</module>
 		<module>data/jdbc</module>
 		<module>data/jpa</module>
+		<module>security/login</module>
 		<module>security/security-first-glance</module>
 		<module>web/internationalisation</module>
 		<module>web/static-content</module>
