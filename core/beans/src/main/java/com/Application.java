@@ -1,15 +1,13 @@
-package com.config;
+package com;
 
 import com.model.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.util.Arrays;
 
-@ComponentScan({"com"})
 @SpringBootApplication //equals to @Configuration, @EnableAutoConfiguration, @ComponentScan
 public class Application {
 
