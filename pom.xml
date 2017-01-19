@@ -18,10 +18,11 @@
 		<module>core/dependency-injection</module>
 		<module>core/hello-spring</module>
 		<module>core/hello-spring-boot</module>
-		<module>web/internationalisation</module>
+		<module>core/profiles</module>
 		<module>data/jdbc</module>
 		<module>data/jpa</module>
-		<module>core/profiles</module>
+		<module>security/security-first-glance</module>
+		<module>web/internationalisation</module>
 		<module>web/static-content</module>
 	</modules>
 
