@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/guest").permitAll()
+				.antMatchers("/","/guest").permitAll()
 				.antMatchers("/webjars/**").permitAll()
 				.antMatchers("/static/**").permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
@@ -46,7 +46,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.logout()
 				.logoutUrl("/logout")
 				.logoutSuccessUrl("/login")
-				.permitAll();
+				.deleteCookies("JSESSIONID")
+				.invalidateHttpSession(true)
+				.permitAll()
+				.and()
+			.httpBasic()
+				.and()
+			.csrf()
+				.disable();
 	}
 
 }
