@@ -18,12 +18,12 @@ public class Person implements InitializingBean, DisposableBean {
     private List<Contact> contacts;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         //InitializingBean interface implements bean initialisation handler
     }
 
     @Override
-    public void destroy() throws Exception {
+    public void destroy() {
         //DisposableBean interface implements bean destruction handler
     }
 

@@ -20,16 +20,15 @@ public class XmlBeansTest {
     private ApplicationContext context;
 
     @Test
-    public void singletonBeanReturnsTheSameObject() throws Exception {
+    public void singletonBeanReturnsTheSameObject() {
         final Person person1 = context.getBean("person", Person.class);
         final Person person2 = context.getBean("person", Person.class);
         assertThat(person1, is(person2));
         assertTrue(person1 == person2);
-
     }
 
     @Test
-    public void prototypeBeanReturnsTheDifferentObject() throws Exception {
+    public void prototypeBeanReturnsTheDifferentObject() {
         final Person person1 = context.getBean("prototypePerson", Person.class);
         final Person person2 = context.getBean("prototypePerson", Person.class);
         assertThat(person1, is(person2));

@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class Application {
+public class ProfilesApplication {
 
     public static void main(String[] args) {
-        final ApplicationContext context = SpringApplication.run(Application.class, args);
+        final ApplicationContext context = SpringApplication.run(ProfilesApplication.class, args);
 
         System.out.println("\nProfile properties example via components: " + context.getBean("componentDataSource"));
 

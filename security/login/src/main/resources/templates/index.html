@@ -10,12 +10,21 @@
 <div layout:fragment="content">
 	<h3>Welcome home</h3>
 	<ul>
-		<li><strong>/guest</strong> - available for everyone</li>
-		<li><strong>/user</strong> - grant access for admin/user roles</li>
-		<li><strong>/admin/...</strong> - is guaranteed for admin role</li>
+		<li><a href="/login">/login</a> - available for everyone</li>
+		<li><a href="/guest">/guest</a> - available for everyone</li>
+		<li><a href="/user">/user</a> - grant access for admin/user roles</li>
+		<li><a href="/admin">/admin/...</a> - is guaranteed for admin role</li>
 	</ul>
 	<br/>
-	And be sure to try <strong>/logout</strong> for the new challenges
+	<h3>Valid credentials by role:</h3>
+	<ul>
+		<li><strong>Admin: </strong>admin / admin</li>
+		<li><strong>User: </strong>john / doe</li>
+	</ul>
+	<br/>
+	<form action="/logout" method="post" >
+		And be sure to try <input type="submit" value="logout"/> for the new challenges!
+	</form>
 </div>
 
 </body>

@@ -9,7 +9,7 @@ public class PageController {
 
     @RequestMapping("/guest")
     public String guest() {
-        return "This page should be available for everyone... But it doesn't work for somehow!";
+        return "This page should be available for everyone";
     }
 
     @RequestMapping("/user")

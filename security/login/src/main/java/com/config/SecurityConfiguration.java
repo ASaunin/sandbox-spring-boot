@@ -1,17 +1,16 @@
 package com.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -19,11 +18,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth
 			.inMemoryAuthentication()
 				.withUser("admin")
-					.password("admin")
+					.password("{noop}admin")
 					.roles("ADMIN")
 					.and()
 				.withUser("john")
-					.password("doe")
+					.password("{noop}doe")
 					.roles("USER");
 	}
 
@@ -34,24 +33,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/","/guest").permitAll()
 				.antMatchers("/webjars/**").permitAll()
 				.antMatchers("/static/**").permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				.anyRequest().authenticated()
+				.antMatchers("/user").authenticated()
+                .antMatchers("/admin/**").hasRole("ADMIN")
 				.and()
 			.formLogin()
 				.loginPage("/login")
-				.usernameParameter("email")
-				.defaultSuccessUrl("/user")
-				.permitAll()
+                .usernameParameter("email")
+                .passwordParameter("password")
+				.defaultSuccessUrl("/")
 				.and()
 			.logout()
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("/login")
-				.deleteCookies("JSESSIONID")
-				.invalidateHttpSession(true)
-				.permitAll()
-				.and()
-			.httpBasic()
-				.and()
+				.logoutSuccessUrl("/")
+                .permitAll()
+                .and()
 			.csrf()
 				.disable();
 	}

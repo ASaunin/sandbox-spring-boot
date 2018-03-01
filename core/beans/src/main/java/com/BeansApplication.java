@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.Arrays;
 
 @SpringBootApplication //equals to @Configuration, @EnableAutoConfiguration, @ComponentScan
-public class Application {
+public class BeansApplication {
 
     @Bean("person") //Specifies specific bean name
     public Person fooPerson() {
@@ -21,7 +21,7 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        final ApplicationContext context = SpringApplication.run(Application.class);
+        final ApplicationContext context = SpringApplication.run(BeansApplication.class);
         final String[] beanNames = context.getBeanDefinitionNames();
 
         // Displays all the beans from component scan
