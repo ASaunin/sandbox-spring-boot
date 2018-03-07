@@ -4,11 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-autowire="byType" default-autowire-candidates="fileLogger,consoleLogger">
 
-    <bean id="logger" class="xml.autowiring.by.defolt.Logger"/>
+    <bean id="logger" class="com.asaunin.xml.autowiring.by.defolt.Logger"/>
 
-    <bean id="fileLogger" class="xml.autowiring.FileWriter"/>       <!-- Set primary="true" property instead of default-autowire-candidates -->
-    <bean id="fileLogger2" class="xml.autowiring.FileWriter"/>      <!-- Set primary="true" property instead of default-autowire-candidates -->
-    <bean id="consoleLogger" class="xml.autowiring.ConsoleWriter"/>
-    <bean id="consoleLogger2" class="xml.autowiring.ConsoleWriter"/>
+    <bean id="fileLogger" class="com.asaunin.xml.autowiring.FileWriter"/>       <!-- Set primary="true" property instead of default-autowire-candidates -->
+    <bean id="fileLogger2" class="com.asaunin.xml.autowiring.FileWriter"/>      <!-- Set primary="true" property instead of default-autowire-candidates -->
+    <bean id="consoleLogger" class="com.asaunin.xml.autowiring.ConsoleWriter"/>
+    <bean id="consoleLogger2" class="com.asaunin.xml.autowiring.ConsoleWriter"/>
 
 </beans>

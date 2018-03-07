@@ -10,13 +10,13 @@
     <!--<context:component-scan base-package="xmlbeans"/>-->
 
     <!--Constructor arguments-->
-    <bean id="phone" class="xml.basic.beans.Contact">
+    <bean id="phone" class="com.asaunin.xml.basic.beans.Contact">
         <constructor-arg index="0" value="PHONE"/>
         <constructor-arg index="1" value="+792198765432"/>
     </bean>
 
     <!--Constructor arguments (short form)-->
-    <bean id="address" class="xml.basic.beans.Contact" c:type="ADDRESS" c:value="123 Main St., Anytown, USA"/>
+    <bean id="address" class="com.asaunin.xml.basic.beans.Contact" c:type="ADDRESS" c:value="123 Main St., Anytown, USA"/>
 
     <!--Define contact list-->
     <bean id="contacts" class="java.util.ArrayList" scope="prototype">
@@ -29,7 +29,7 @@
     </bean>
 
     <!--Define singleton bean-->
-    <bean id="person" class="xml.basic.beans.Person" p:taxId="123">
+    <bean id="person" class="com.asaunin.xml.basic.beans.Person" p:taxId="123">
         <constructor-arg name="firstName" value="John"/>
         <constructor-arg name="lastName" value="Doe"/>
         <constructor-arg name="age" value="33"/>
@@ -37,10 +37,10 @@
     </bean>
 
     <!--Define prototype bean-->
-    <bean id="prototypePerson" class="xml.basic.beans.Person" scope="prototype" c:firstName="John" c:lastName="Doe" c:age="33" p:taxId="123" p:contacts-ref="contacts"/>
+    <bean id="prototypePerson" class="com.asaunin.xml.basic.beans.Person" scope="prototype" c:firstName="John" c:lastName="Doe" c:age="33" p:taxId="123" p:contacts-ref="contacts"/>
 
     <!--Factory-method instantiation -->
-    <bean id="personFactory" class="xml.basic.beans.PersonFactory" />
+    <bean id="personFactory" class="com.asaunin.xml.basic.beans.PersonFactory" />
     <bean id="factoredPerson" factory-bean="personFactory" factory-method="createPerson" c:firstName="John" c:lastName="Doe" c:age="33"/>
 
 </beans>

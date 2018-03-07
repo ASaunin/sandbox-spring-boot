@@ -3,9 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="logger" class="xml.autowiring.by.name.Logger" autowire="byName"/>
+    <bean id="logger" class="com.asaunin.xml.autowiring.by.name.Logger" autowire="byName"/>
 
-    <bean id="fileLogger" class="xml.autowiring.FileWriter"/>
-    <bean id="consoleLogger" class="xml.autowiring.ConsoleWriter"/>
+    <bean id="fileLogger" class="com.asaunin.xml.autowiring.FileWriter"/>
+    <bean id="consoleLogger" class="com.asaunin.xml.autowiring.ConsoleWriter"/>
 
 </beans>

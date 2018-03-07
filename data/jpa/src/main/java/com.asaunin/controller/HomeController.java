@@ -1,14 +1,15 @@
 package com.asaunin.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class PageController {
+public class HomeController {
 
     @RequestMapping("/")
-    public String home() {
-        return "views/index";
+    public String home(Model model) {
+        return "index";
     }
 
 }
